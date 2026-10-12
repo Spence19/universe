@@ -247,6 +247,7 @@ INSERT INTO public.galaxy VALUES (2, 'Andromeda', 152000, 1000000000000, 'A barr
 
 INSERT INTO public.star VALUES (1, 'Proxima Centauri', 4850, 4.25, 'Red Dwarf', 1);
 INSERT INTO public.star VALUES (4, 'Barnard''s Star', 10000, 5.96, 'Red Dwarf', 1);
+INSERT INTO public.star VALUES (5, 'Sun', 4600, 0.00, 'G-type main-sequence', 1);
 
 
 --
@@ -274,7 +275,7 @@ SELECT pg_catalog.setval('public.planet_planet_id_seq', 1, false);
 -- Name: star_star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.star_star_id_seq', 4, true);
+SELECT pg_catalog.setval('public.star_star_id_seq', 5, true);
 
 
 --
