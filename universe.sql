@@ -240,6 +240,7 @@ INSERT INTO public.galaxy VALUES (2, 'Andromeda', 152000, 1000000000000, 'A barr
 --
 
 INSERT INTO public.planet VALUES (1, 'Earth', 4540, 12742, true);
+INSERT INTO public.planet VALUES (2, 'Mars', 4500, 6779, false);
 
 
 --
@@ -269,7 +270,7 @@ SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
 -- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.planet_planet_id_seq', 1, true);
+SELECT pg_catalog.setval('public.planet_planet_id_seq', 2, true);
 
 
 --
