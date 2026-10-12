@@ -127,7 +127,8 @@ CREATE TABLE public.planet (
     name character varying(50) NOT NULL,
     age_in_millions_of_years integer,
     diameter_in_km integer,
-    has_life boolean
+    has_life boolean,
+    star_id integer
 );
 
 
@@ -239,8 +240,8 @@ INSERT INTO public.galaxy VALUES (2, 'Andromeda', 152000, 1000000000000, 'A barr
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.planet VALUES (1, 'Earth', 4540, 12742, true);
-INSERT INTO public.planet VALUES (2, 'Mars', 4500, 6779, false);
+INSERT INTO public.planet VALUES (1, 'Earth', 4540, 12742, true, 5);
+INSERT INTO public.planet VALUES (2, 'Mars', 4500, 6779, false, 5);
 
 
 --
@@ -342,6 +343,14 @@ ALTER TABLE ONLY public.star
 
 ALTER TABLE ONLY public.star
     ADD CONSTRAINT star_pkey PRIMARY KEY (star_id);
+
+
+--
+-- Name: planet planet_star_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.planet
+    ADD CONSTRAINT planet_star_id_fkey FOREIGN KEY (star_id) REFERENCES public.star(star_id);
 
 
 --
