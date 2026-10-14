@@ -228,6 +228,10 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 
 INSERT INTO public.galaxy VALUES (1, 'Milky Way', 87400, 250000000000, 'A barred spiral galaxy home to our solar system');
 INSERT INTO public.galaxy VALUES (2, 'Andromeda', 152000, 1000000000000, 'A barred spiral galaxy that''s the closet to the Milky Way');
+INSERT INTO public.galaxy VALUES (3, 'Triangulum', 61120, 40000000000, 'A spiral galaxy sometimes referred to as the Pinwheel Galaxy');
+INSERT INTO public.galaxy VALUES (4, 'Uras Major III', 20, 57, 'A dwarf satellite galaxy of the Milky Way');
+INSERT INTO public.galaxy VALUES (5, 'Barnard''s Galaxy', 9200, NULL, 'A barrred irregular galaxy');
+INSERT INTO public.galaxy VALUES (6, 'Star Wars Galaxy', 120000, 400000000000, 'The fictional galaxy from the Star Wars universe');
 
 
 --
@@ -257,7 +261,7 @@ INSERT INTO public.star VALUES (5, 'Sun', 4600, 0.00, 'G-type main-sequence', 1)
 -- Name: galaxy_galaxy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 2, true);
+SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 
 
 --
