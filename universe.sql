@@ -246,6 +246,16 @@ INSERT INTO public.galaxy VALUES (6, 'Star Wars Galaxy', 120000, 400000000000, '
 
 INSERT INTO public.planet VALUES (1, 'Earth', 4540, 12742, true, 5);
 INSERT INTO public.planet VALUES (2, 'Mars', 4500, 6779, false, 5);
+INSERT INTO public.planet VALUES (3, 'Mercury', NULL, 4879, false, 5);
+INSERT INTO public.planet VALUES (4, 'Jupiter', 4590, 139772, false, 5);
+INSERT INTO public.planet VALUES (5, 'Saturn', 4600, 116464, false, 5);
+INSERT INTO public.planet VALUES (6, 'Neptune', 4500, 49224, false, 5);
+INSERT INTO public.planet VALUES (7, 'Uranus', 4600, 50724, false, 5);
+INSERT INTO public.planet VALUES (8, 'Tatooine', NULL, 10465, true, 9);
+INSERT INTO public.planet VALUES (9, 'Venus', 4600, 12102, false, 5);
+INSERT INTO public.planet VALUES (10, 'Proxima Centuari d', NULL, 10321, false, 1);
+INSERT INTO public.planet VALUES (11, 'Proxima Centuari b', NULL, 11977, false, 1);
+INSERT INTO public.planet VALUES (12, 'Pluto', 4600, 2376, false, 5);
 
 
 --
@@ -258,6 +268,7 @@ INSERT INTO public.star VALUES (5, 'Sun', 4600, 0.00, 'G-type main-sequence', 1)
 INSERT INTO public.star VALUES (6, 'Altair', 88, 16.70, 'A-type main-sequence', 1);
 INSERT INTO public.star VALUES (7, 'Pollux', 1190, 34.00, 'Orange-hued red giant', 1);
 INSERT INTO public.star VALUES (8, 'Betelgeuse', 14, 400.00, 'Red supergiant', 1);
+INSERT INTO public.star VALUES (9, 'Tatoo', NULL, NULL, 'Binary star', 6);
 
 
 --
@@ -278,14 +289,14 @@ SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
 -- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.planet_planet_id_seq', 2, true);
+SELECT pg_catalog.setval('public.planet_planet_id_seq', 12, true);
 
 
 --
 -- Name: star_star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.star_star_id_seq', 8, true);
+SELECT pg_catalog.setval('public.star_star_id_seq', 9, true);
 
 
 --
