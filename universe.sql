@@ -87,10 +87,9 @@ ALTER SEQUENCE public.galaxy_galaxy_id_seq OWNED BY public.galaxy.galaxy_id;
 CREATE TABLE public.moon (
     moon_id integer NOT NULL,
     name character varying(50) NOT NULL,
-    age_in_millions_of_years integer,
     diameter_in_km integer,
-    has_life boolean,
-    gravity_relative_to_earth numeric(5,3)
+    gravity_relative_to_earth numeric(5,3),
+    planet_id integer
 );
 
 
@@ -238,6 +237,26 @@ INSERT INTO public.galaxy VALUES (6, 'Star Wars Galaxy', 120000, 400000000000, '
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.moon VALUES (1, 'Moon', 3475, 0.165, 1);
+INSERT INTO public.moon VALUES (2, 'Phobos', 22, 0.000, 2);
+INSERT INTO public.moon VALUES (3, 'Deimos', 13, 0.000, 2);
+INSERT INTO public.moon VALUES (4, 'Ganymede', 5268, 0.146, 4);
+INSERT INTO public.moon VALUES (5, 'Callisto', 4820, 0.126, 4);
+INSERT INTO public.moon VALUES (6, 'Io', 3648, 0.183, 4);
+INSERT INTO public.moon VALUES (7, 'Europa', 3120, 0.134, 4);
+INSERT INTO public.moon VALUES (8, 'Himalia', 279, 0.000, 4);
+INSERT INTO public.moon VALUES (9, 'Titan', 5149, 0.138, 5);
+INSERT INTO public.moon VALUES (10, 'Rhea', 1528, 0.027, 5);
+INSERT INTO public.moon VALUES (11, 'Iapetus', 1469, 0.023, 5);
+INSERT INTO public.moon VALUES (12, 'Dione', 1123, 0.230, 5);
+INSERT INTO public.moon VALUES (13, 'Tethys', 1060, 0.140, 5);
+INSERT INTO public.moon VALUES (14, 'Enceladus', 500, 0.012, 5);
+INSERT INTO public.moon VALUES (15, 'Mimas', 396, 0.006, 5);
+INSERT INTO public.moon VALUES (16, 'Titania', 1577, 0.036, 7);
+INSERT INTO public.moon VALUES (17, 'Oberon', 1522, 0.038, 7);
+INSERT INTO public.moon VALUES (18, 'Umbriel', 1165, 0.026, 7);
+INSERT INTO public.moon VALUES (19, 'Triton', 2707, 0.079, 6);
+INSERT INTO public.moon VALUES (20, 'Proteus', 420, 0.000, 6);
 
 
 --
@@ -282,7 +301,7 @@ SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 -- Name: moon_moon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
+SELECT pg_catalog.setval('public.moon_moon_id_seq', 20, true);
 
 
 --
@@ -361,6 +380,14 @@ ALTER TABLE ONLY public.star
 
 ALTER TABLE ONLY public.star
     ADD CONSTRAINT star_pkey PRIMARY KEY (star_id);
+
+
+--
+-- Name: moon moon_planet_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.moon
+    ADD CONSTRAINT moon_planet_id_fkey FOREIGN KEY (planet_id) REFERENCES public.planet(planet_id);
 
 
 --
